@@ -19,24 +19,19 @@ resource "google_storage_bucket" "helm_repository" {
   uniform_bucket_level_access = true 
 
   website {
-    main_page_suffix = "index.html
+    main_page_suffix = "index.html"
     not_found_page = "404.html"
+    homepage_suffix = "index.yaml"
   }
   cors {
-    origin = ["https://caseray.com.ng"]
+    origin = ["*"]
+    #origin = ["https://caseray.com.ng"]
     method = ["GET", "HEAD", "PUT", "POST", "DELETE"]
     response_header = ["*"]
     max_age_seconds = 3600
   }
 
-
 }
-
-# Enabling website configuration on ugo-bucket 
-#resource "google_storage_bucket_website" "helm_repository_website" {
-#  bucket = google_storage_bucket.helm_repository.name
-#  homepage_suffix = "index.yaml"
-#}
 
 # Configuring CORS setting to allow Helm clients to access bucket
 resource "google_storage_bucket_iam_member" "helm_repository_cors" {
