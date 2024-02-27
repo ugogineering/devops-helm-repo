@@ -1,3 +1,15 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+  }
+}
+provider "google" {
+  project = ""
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
 # Creating a GCS bucket to store Helm charts
 resource "google_storage_bucket" "helm_repository" {
   name          = "ugo-bucket-270224"
