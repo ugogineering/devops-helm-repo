@@ -1,1 +1,1 @@
-#This is a DevOps repo that contains a terraform script that creates a GCS bucket
+#This is a DevOps repo that contains a terraform script that creates a GCS bucket.
