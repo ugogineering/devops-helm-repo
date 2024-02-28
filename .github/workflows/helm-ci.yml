@@ -9,4 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with: 
-          fetch-depth: 2
+          fetch-depth: 
+      - name: Install helm and plugins
+        run: ./scripts/install.sh
+      - name: Release charts
+        run: ./scripts/release.sh
+        env:
+          GCLOUD_SERVICE_ACCOUNT_KEY: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY }}
