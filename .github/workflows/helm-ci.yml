@@ -9,4 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with: 
-          fetch-depth: 2
+          fetch-depth: 
+      - name: Install helm and plugins
+        run: ./scripts/install.sh
