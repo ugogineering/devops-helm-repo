@@ -21,7 +21,7 @@ helm repo add private ${GCS_BUCKET_NAME}
 
 # Create and add the first chart to helm repository
 # Create charts directory and run helm create
-mkdir charts
+# mkdir charts
 helm create charts/foo
 
 # prev_rev=$(git rev-parse HEAD^1)
