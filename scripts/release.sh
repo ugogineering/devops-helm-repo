@@ -19,6 +19,11 @@ helm gcs init ${GCS_BUCKET_NAME}
 echo "Adding gcs bucket repo ${GCS_BUCKET_NAME}"
 helm repo add private ${GCS_BUCKET_NAME}
 
+# Create and add the first chart to helm repository
+# Create charts directory and run helm create
+mkdir charts
+helm create charts/foo
+
 # prev_rev=$(git rev-parse HEAD^1)
 if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
     prev_rev=$(git rev-parse HEAD~1)
